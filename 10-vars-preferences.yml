@@ -11,6 +11,6 @@
   tasks:
   - name: printing the information
     vars:
-    - COURSE: "git"
+   # - COURSE: "git"
     ansible.builtin.debug:
       msg: "I am practicing {{COURSE}}."
