@@ -1,0 +1,24 @@
+- name: variables preferences among all choices
+  hosts: web
+  vars:
+  - COURSE: "ansible"
+    DURATION: "10hrs"
+    TRAINER: "Sivakumar"
+  vars_file:
+  - vars.yml
+  vars_prompt:
+  - name: COURSE
+    prompt: Please enter your course
+    private: false
+  - name: DURATION
+    prompt: Please enter your duration
+    private: false
+  - name: TRAINER
+    prompt: Please enter your trainer
+    private: false
+  tasks:
+  - name: printing the information
+    vars:
+    - DURATION: "15Hrs"
+    ansible.builtin.debug:
+      msg: "I am practicing {{COURSE}}, with duration of {{DURATION}} under the guidance of {{TRAINER}}."

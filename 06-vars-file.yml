@@ -1,0 +1,8 @@
+- name: variables file
+  hosts: web
+  vars_files:
+  - vars.yml
+  tasks:
+  - name: printing the information 
+    asible.builtin.debug:
+      msg: "I am practicing {{COURSE}}, with duration of {{DURATION}} under the guidance of {{TRAINER}}."
