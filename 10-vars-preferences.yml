@@ -1,7 +1,7 @@
 - name: variables preferences among all choices
   hosts: web
   vars:
-  - COURSE: "ansible"
+    COURSE: "ansible"
     DURATION: "10hrs"
     TRAINER: "Sivakumar"
   vars_file:
