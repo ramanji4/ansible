@@ -1,0 +1,20 @@
+- name: task level variables
+  hosts: web
+  vars: 
+    COURSE: ansible
+    DURATION: 10Hrs
+    TRAINER: Sivakumar
+  tasks: 
+  - name: printing the information
+    ansible.builtin.debug:
+      msg: "I am practicing {{COURSE}}, with duration of {{DURATION}} under the guidance of {{TRAINER}}."
+  
+  - name: printing the information
+    vars:
+      DURATION: 15hrs
+    ansible.builtin.debug:
+      msg: "I am practicing {{COURSE}}, with duration of {{DURATION}} under the guidance of {{TRAINER}}."
+  
+  - name: printing the information
+    ansible.builtin.debug:
+      msg: "I am practicing {{COURSE}}, with duration of {{DURATION}} under the guidance of {{TRAINER}}."
