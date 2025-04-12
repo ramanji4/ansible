@@ -4,10 +4,10 @@
     COURSE: "Shell"
   vars_files:
   - vars.yml
-  vars_prompt:
-  - name: COURSE
-    prompt: Please enter your course
-    private: false 
+  # vars_prompt:
+  # - name: COURSE
+  #   prompt: Please enter your course
+    #private: false 
   tasks:
   - name: printing the information
     vars:
