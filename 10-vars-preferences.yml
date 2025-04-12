@@ -4,7 +4,7 @@
     COURSE: "ansible"
     DURATION: "10hrs"
     TRAINER: "Sivakumar"
-  vars_file:
+  vars_files:
   - vars.yml
   vars_prompt:
   - name: COURSE
