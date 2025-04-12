@@ -1,4 +1,4 @@
-- name: variables preferences among all choices
+- name: variable preferences
   hosts: web
   vars:
     COURSE: "ansible"
