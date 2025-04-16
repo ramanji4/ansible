@@ -1,0 +1,25 @@
+- name: datatypes
+  hosts: local
+  connection: local
+  vars:
+    Course: DevOps with AWS
+    duration: 120hrs
+    topics:
+    - Linux
+    - Shell
+    - Ansible
+    - Terraform
+    - K8
+    - Docker
+    live: true
+    tools:
+      ci: jenkins
+      cm: ansible
+      cloud: AWS
+      AWS:
+      - IAM
+      - S3
+    tasks:
+    - name: printing the information
+    ansible.builtin.debug:
+      msg: "I am practicing {{Course}}, with duration of {{duration}}, topics are {{topics}}, tools are {{tools}} and the live is {{live}}"
