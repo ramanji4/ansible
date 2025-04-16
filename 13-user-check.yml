@@ -2,7 +2,7 @@
   hosts: web
   become: yes
   tasks: 
-  - name: checking if the user is exists or not
+  - name: checking user existence 
     ansible.builtin.command: id expense
     register: USER
     ignore_errors: ture
