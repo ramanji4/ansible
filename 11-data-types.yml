@@ -19,7 +19,7 @@
       AWS:
       - IAM
       - S3
-    tasks:
-    - name: printing the information
-      ansible.builtin.debug:
-        msg: "I am practicing {{Course}}, with duration of {{duration}}, topics are {{topics}}, tools are {{tools}} and the live is {{live}}"
+  tasks:
+  - name: printing the information
+    ansible.builtin.debug:
+      msg: "I am practicing {{Course}}, with duration of {{duration}}, topics are {{topics}}, tools are {{tools}} and the live is {{live}}"
