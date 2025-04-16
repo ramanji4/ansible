@@ -10,9 +10,9 @@
   - name: print the msg
     ansible.builtin.debug:
       msg: "number is less than 10"
-    when: number < 10 
+    when: number | int < 10 
   
   - name: print the msg
     ansible.builtin.debug:
       msg: "Please enter your number"
-    when: number >= 10 
+    when: number | int >= 10 
