@@ -1,0 +1,12 @@
+- name: printing multiple names
+  hosts: local
+  connection: local
+  tasks:
+  - name: printing greeting multiple persons
+    ansible.builtin.debug:
+      msg: "Hello Mr.{{ item }}"
+    loop:
+    - Hemanth
+    - Manjunath
+    - Yousuf
+    - Seenu

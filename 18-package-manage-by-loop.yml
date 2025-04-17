@@ -1,0 +1,13 @@
+- name: package management
+  hosts: web
+  become: yes
+  tasks:
+  - name: managing packages based on their already presence
+    ansible.builtin.package:
+      name: "{{ item.name }}"
+      state: "{{ item.state }}"
+    loop:
+    - { name: 'nginx', state: 'present'}
+    - { name: 'mysql', state: 'absent'}
+    - { name: 'postfix', state: 'present'}
+    - { name: 'httpd', state: 'absent'} 
