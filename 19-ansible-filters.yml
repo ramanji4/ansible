@@ -48,6 +48,11 @@
     ansible.builtin.debug:
       msg: "{{ course | items2dict }}"
   
+  - name: installing netaddr python library
+    ansible.builtin.pip:
+      name: netaddr
+      executable: pip3.9
+
   - name: Check and validate IP address
     vars:
       myip: ""
