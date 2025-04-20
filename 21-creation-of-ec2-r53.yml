@@ -18,11 +18,11 @@
       security_group: "{{ sg_id }}"
       image_id: "{{ ami_id }}"
     loop: "{{ instances }}"
-    register: ec2-instances
+    register: ec2_instances
 
   - name: printing output of instances
     ansible.builtin.debug:
-      msg: "{{ ec2-instances }}"
+      msg: "{{ ec2_instances }}"
   
   # - name: creating private IP r53 records
   #   amazon.aws.route53:
