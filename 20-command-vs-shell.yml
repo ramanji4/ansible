@@ -15,4 +15,8 @@
   
   - name: search the process
     ansible.builtin.command: ps -ef | grep ssh
-    register: output 
+    register: output_1
+  
+  - name: printing output
+    ansible.builtin.debug:
+      msg: "{{ output_1 }}"
