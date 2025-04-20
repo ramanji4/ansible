@@ -55,6 +55,6 @@
 
   - name: Check and validate IP address
     vars:
-      myip: ""
+      myip: "172.31.29.218"
     ansible.builtin.debug:
       msg: "{{ myip | ansible.utils.ipv4 }}"
