@@ -1,0 +1,55 @@
+- name: usage of anisble filters
+  hosts: local
+  connection: local
+  tasks:
+  - name: printing default variable
+    ansible.builtin.debug:
+      msg: "Hello {{ course | default('ansible') }}"
+
+  - name: converting to UPPERcase
+    vars:
+      greeting: Hello Ansible
+    ansible.builtin.debug:
+      msg: "{{ greeting | upper }}"
+
+  - name: converting to lowercase
+    vars:
+      greeting: Hello Ansible
+    ansible.builtin.debug:
+      msg: "{{ greeting | lower }}"
+
+  - name: getting unique values
+    vars:
+      numbers: [1,3,4,7,2,5,8,4,7,2,4,8,3,9,4,5,6,4]
+    anisble.builtin.debug:
+      msg: "{{ numbers | unique }}"
+    
+  - name: printing min and max values from group of numbers
+    vars:
+      numbers: [1,3,4,7,2,5,8,4,7,2,4,8,3,9,4,5,6,4]
+    ansible.builtin.debug:
+      msg: "Min: {{ numbers | min }}, Max: {{ numbers | max }}"
+
+  - name: convering map to list
+    vars:
+      course:
+        name: ansible
+        duration: 10Hrs
+        trainer: Sri sivakumar
+    ansible.builtin.debug:
+      msg: "{{ course | dict2items }}"
+
+  - name: converting list to map
+    vars:
+      course:
+      - { "key": "name", "value": "ansible" }
+      - { "key": "duration", "value": "10Hrs" }
+      - { "key": "trainer", "value": "Sri Sivakumar" }
+    ansible.builtin.debug:
+      msg: "{{ course | items2dict }}"
+  
+  - name: Check and validate IP address
+    vars:
+      myip: ""
+    ansible.builtin.debug:
+      msg: "{{ myip | ansible.utils.ipv4 }}"
